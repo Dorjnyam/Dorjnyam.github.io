@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab2 Itu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            background-color: #4CAF50;
+            padding: 20px 0;
+            text-align: center;
+            color: white;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            background-color: #333;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            padding: 14px 20px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #111;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        article {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        article.active {
+            display: block;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1>Family introduction</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home" onclick="showSection('home')">Home</a></li>
+            <li><a href="#about-me" onclick="showSection('about-me')">About Me</a></li>
+            <li><a href="#family" onclick="showSection('family')">Family</a></li>
+            <li><a href="#friends" onclick="showSection('friends')">Friends</a></li>
+            <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <article id="home" class="active">
+            <h1>Home</h1>
+            <p>Welcome to my website! This is where I introduce myself and share details about my projects, hobbies, and how you can contact me.</p>
+        </article>
+
+        <article id="about-me">
+            <h1>About Me</h1>
+            <p>Hello! My name is [Your Name]. I am a passionate individual who loves technology, design, and learning
+                new things. This website is a glimpse into my life and what I enjoy doing.</p>
+        </article>
+
+        <article id="family">
+            <h1>Family</h1>
+            <p>Here, I showcase some of the projects I have worked on. Whether it's web development, coding challenges,
+                or creative designs, I put my best into everything I do.</p>
+        </article>
+
+        <article id="friends">
+            <h1>Friends</h1>
+            <p>When I’m not working on projects, I enjoy a variety of hobbies such as hiking, reading, and exploring new
+                technologies.</p>
+        </article>
+
+        <article id="contact">
+            <h1>Contact</h1>
+            <p>Feel free to reach out to me via email at [Your Email] or connect with me on social media. I'd love to
+                hear from you!</p>
+        </article>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Dorjnyam. Интернет технологийн үндэс.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            const articles = document.querySelectorAll('article');
+            articles.forEach(article => {
+                article.classList.remove('active');
+            });
+
+            const activeArticle = document.getElementById(sectionId);
+            activeArticle.classList.add('active');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            showSection('home');
+        });
+    </script>
+</body>
+
+</html>
