@@ -6,140 +6,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab2 Itu</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-
-        .header {
-            background-color: #4CAF50;
-            padding: 20px 0;
-            text-align: center;
-            color: white;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            background-color: #333;
-            overflow: hidden;
+        h1 {
             text-align: center;
         }
 
-        nav ul li {
-            display: inline-block;
+        table {
+            border: 2px solid black;
+            width: 100%;
         }
 
-        nav ul li a {
-            display: block;
-            color: white;
-            padding: 14px 20px;
-            text-align: center;
-            text-decoration: none;
-        }
-
-        nav ul li a:hover {
-            background-color: #111;
-        }
-
-        section {
-            padding: 20px;
+        table,
+        tr,
+        td,
+        article {
+            border: 1px solid black;
         }
 
         article {
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
             display: none;
         }
 
-        article.active {
+        article.activate {
             display: block;
         }
 
         footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
             position: fixed;
-            width: 100%;
+            left: 0;
             bottom: 0;
-        }
-
-        footer p {
-            margin: 0;
+            width: 100%;
+            background-color: darkgray;
+            color: black;
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
-    <header class="header">
-        <h1>Family introduction</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#home" onclick="showSection('home')">Home</a></li>
-            <li><a href="#about-me" onclick="showSection('about-me')">About Me</a></li>
-            <li><a href="#family" onclick="showSection('family')">Family</a></li>
-            <li><a href="#friends" onclick="showSection('friends')">Friends</a></li>
-            <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
-        </ul>
-    </nav>
-
-    <section>
-        <article id="home" class="active">
-            <h1>Home</h1>
-            <p>Welcome to my website! This is where I introduce myself and share details about my projects, hobbies, and how you can contact me.</p>
-        </article>
-
-        <article id="about-me">
-            <h1>About Me</h1>
-            <p>Hello! My name is [Your Name]. I am a passionate individual who loves technology, design, and learning
-                new things. This website is a glimpse into my life and what I enjoy doing.</p>
-        </article>
-
-        <article id="family">
-            <h1>Family</h1>
-            <p>Here, I showcase some of the projects I have worked on. Whether it's web development, coding challenges,
-                or creative designs, I put my best into everything I do.</p>
-        </article>
-
-        <article id="friends">
-            <h1>Friends</h1>
-            <p>When I’m not working on projects, I enjoy a variety of hobbies such as hiking, reading, and exploring new
-                technologies.</p>
-        </article>
-
-        <article id="contact">
-            <h1>Contact</h1>
-            <p>Feel free to reach out to me via email at [Your Email] or connect with me on social media. I'd love to
-                hear from you!</p>
-        </article>
-    </section>
+    <table>
+        <tr>
+            <td colspan="2">
+                <h1>Family introduction</h1>
+            </td>
+        </tr>
+        <tr>
+            <td width=20%>
+                <ul>
+                    <li><a href="#home" onclick="showSection('home')">Home</a></li>
+                    <li><a href="#about-me" onclick="showSection('about-me')">About me</a></li>
+                    <li><a href="#family" onclick="showSection('family')">Family</a></li>
+                    <li><a href="#friend" onclick="showSection('friend')">Friends</a></li>
+                    <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
+                    <li><a href="./index.html">Back to Main</a></li>
+                </ul>
+            </td>
+            <td>
+                <section>
+                    <article id="home" class="activate">
+                        <h2>Home</h2>
+                        <p>
+                            Манай танилцуулга вэб сайт!
+                            Энэ сайтаар дамжуулан өөрийгөө танилцуулах ба гэр бүл найз нөхдийнхөө талаар хуваалцах ба
+                            надтай холбоо барих боломжтой.
+                        </p>
+                    </article>
+                    <article id="about-me">
+                        <h2>About me</h2>
+                        <div>Full name: Эрдэнэцогтын Доржням</div>
+                        <div>Birthdate: 2004.02.04</div>
+                        <div>University: Монгол улсын их сургууль</div>
+                        <div>Department: Мэдээлэл технологи электроникийн сургуулы</div>
+                        <div>hobby: Зураг зурах etc.</div>
+                        <div>Lessons: 
+                            <li>Интернэт технологийн үндэс</li>
+                            <li>Компьютерын системийн зарчим I</li>
+                            <li>Компьютерын сүлжээ</li>
+                            <li>Мобайл төхөөрөмжийн программ хөгжүүлэлт</li>
+                            <li>Хиймэл оюун ухаан</li>
+                        </div>
+                    </article>
+                    <article id="family">
+                        <h2>Family</h2>
+                        <div>Аав - Эрдэнэцогт</div>
+                        <div>Ээж - Цэцэгмаа</div>
+                        <div>Эгч - Дэлгэрмаа</div>
+                        <div>Ах - Эрдэнэсайхан</div>
+                        <div>Би - Доржням</div>
+                        <p>Манай гэр бүл нь 5н гишүүнтэй бөгөөд аав ээж хоёр Завханд, ах, эгч хоёр Улаанбаатарт ажил хийж амьдардаг.</p>
+                    </article>
+                    <article id="friend">
+                        <h2>Friends</h2>
+                        <p>Их сургууль, 10 жил, цэцэрлэгээсээ найзалсан хүмүүс зөндөө байгаа.</p>
+                    </article>
+                    <article id="contact">
+                        <h2>Contact</h2>
+                        <li>Phone number: 85371326</li>
+                        <li>email: mjldoko11@gmail.com</li>
+                        <li>Facebook: Доржням Эрдэнэцогт</li>
+                        <li>Linkedin: Dorjnyam</li>
+                    </article>
+                </section>
+            </td>
+        </tr>
+    </table>
 
     <footer>
-        <p>&copy; 2024 Dorjnyam. Интернет технологийн үндэс.</p>
+        Dorjnyam, 2024
     </footer>
 
     <script>
         function showSection(sectionId) {
-            const articles = document.querySelectorAll('article');
-            articles.forEach(article => {
-                article.classList.remove('active');
+            const sections = document.querySelectorAll('article');
+            sections.forEach(section => {
+                section.classList.remove('activate');
             });
-
-            const activeArticle = document.getElementById(sectionId);
-            activeArticle.classList.add('active');
+            document.getElementById(sectionId).classList.add('activate');
         }
-        document.addEventListener('DOMContentLoaded', function () {
-            showSection('home');
-        });
     </script>
 </body>
 
