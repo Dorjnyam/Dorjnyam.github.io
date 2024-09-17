@@ -11,15 +11,12 @@
         }
 
         table {
-            border: 2px solid black;
             width: 100%;
-        }
-
-        table,
-        tr,
-        td,
-        article {
+            height: 100vh;
             border: 1px solid black;
+        }
+        body {
+            margin: 0;
         }
 
         article {
@@ -39,17 +36,23 @@
             color: black;
             text-align: center;
         }
+
+        .main-section{
+            display: flex;
+            align-items: start;
+            justify-content: start;
+        }
     </style>
 </head>
 
 <body>
     <table>
         <tr>
-            <td colspan="2">
+            <td colspan="2" height="10%">
                 <h1>Family introduction</h1>
             </td>
         </tr>
-        <tr>
+        <tr class="main-section">
             <td width=20%>
                 <ul>
                     <li><a href="#home" onclick="showSection('home')">Home</a></li>
