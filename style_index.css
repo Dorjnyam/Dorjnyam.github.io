@@ -1,0 +1,34 @@
+body {
+    background-color: bisque;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    background-color: #c7eff1;
+    height: 8vh;
+    margin-bottom: 10px;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    height: calc(90vh - 10px);
+}
+
+main aside{
+    border: 1px solid black;
+    width: 40vw;
+    padding: 10px;
+}
+
+main section{
+    border: 1px solid black;
+    width: 60vw;
+}
+
+main section li{
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+}
