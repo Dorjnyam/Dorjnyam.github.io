@@ -1,11 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style4.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="script4.js"></script>
+    <title>Lab 4 - CV</title>
 </head>
+
 <body>
-    
+    <div class="action-buttons">
+        <button onclick="window.print()">Print CV</button>
+        <button onclick="shareLink()">Share Link</button>
+    </div>
+
+    <div class="cv-container">
+        <!-- Left sidebar -->
+        <aside class="sidebar">
+            <section class="profile-section">
+                <img src="pro.JPG" alt="profile image" class="profile-img">
+                <h1>DORJNYAM ERDENETSOGT</h1>
+                <h2>Software Engineer</h2>
+            </section>
+
+            <section class="contact">
+                <h3>CONTACT</h3>
+                <p><strong>Phone:</strong> +97686371326</p>
+                <p><strong>Email:</strong> mjldoko11@gmail.com</p>
+                <p><strong>Address:</strong> Aa 1 gazar l amidarch bga</p>
+                <h3>FOLLOW ME</h3>
+                <ul class="links">
+                    <li>
+                        <a href="https://www.facebook.com/profile.php?id=100013961837283" target="_blank">
+                            <img src="icons8-facebook-50.png" alt="Facebook" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/dorj_nyam/" target="_blank">
+                            <img src="icons8-instagram-50.png" alt="Instagram" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Dorjnyam" target="_blank">
+                            <img src="icons8-github-50.png" alt="GitHub" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/dorjnyam-erdenetsogt-229718196/" target="_blank">
+                            <img src="icons8-linkedin-50.png" alt="LinkedIn" />
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="education">
+                <h3>EDUCATION</h3>
+                <p><strong>2022 - 2026</strong></p>
+                <p>Bachelor of Science in Computer Science</p>
+                <p>National University Of Mongolia</p>
+            </section>
+
+            <section class="skills">
+                <h3>SKILLS</h3>
+                <ul>
+                    <li>JavaScript</li>
+                    <li>Python & Django</li>
+                    <li>React & Node.js</li>
+                    <li>PostgreSQL</li>
+                </ul>
+            </section>
+
+            <section class="languages">
+                <h3>LANGUAGES</h3>
+                <p>English (Fluent)</p>
+                <p>Mongolian (Native)</p>
+            </section>
+        </aside>
+
+        <!-- Main content -->
+        <main class="main">
+            <section class="profile">
+                <h3>PROFILE</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolore beatae vero eos saepe, minima consequuntur doloremque odit dolores impedit aut maxime vitae odio repudiandae quo illum nobis harum tenetur?</p>
+            </section>
+
+            <section class="work-experience">
+                <h3>WORK EXPERIENCE</h3>
+
+                <div class="job">
+                    <h4>Student</h4>
+                    <p><strong>2022 - Present</strong></p>
+                    <ul>
+                        <li>something</li>
+                        <li>something2</li>
+                        <li>something3</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <h4>High school student</h4>
+                    <p><strong>2019 - 2022</strong></p>
+                    <ul>
+                        <li>Corona-19</li>
+                        <li>Corona-pro
+                        </li>
+                        <li>Corona-pro-max</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="references">
+                <h3>REFERENCES</h3>
+                <p>Available upon request.</p>
+            </section>
+        </main>
+    </div>
 </body>
+
 </html>
