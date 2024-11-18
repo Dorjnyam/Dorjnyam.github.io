@@ -1,0 +1,54 @@
+body {
+    font-family:   Arial;
+}
+.jumbotron {
+    background-color: #13124F;
+    color: white;
+    padding: 50px 25px;
+    font-weight: bold;
+}
+.top {
+    background-color: #352BA5;
+    padding: 10px 10px;
+    color: white;
+}
+.btn-learn-more {
+    background-color: #F61067;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-transform: uppercase;
+}
+.welcome-box, .vote-box {
+    background-color: #9090A5;
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+}
+.vote-box .btn-cool {
+    background-color: #2AD392;
+    color: white;
+    border: none;
+}
+.vote-box .btn-lame {
+    background-color: #F61067;
+    color: white;
+    border: none;
+}
+.footer {
+    background-color: #1B1B6C;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+.alert {
+    background-color: #9090A5;
+    color: white;
+}
+.messages{
+    background-color: #F61067;
+    text-transform: uppercase;
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+}
