@@ -1,54 +1,145 @@
 body {
-    font-family:   Arial;
+    font-family: Arial, sans-serif;
 }
+
 .jumbotron {
     background-color: #13124F;
     color: white;
     padding: 50px 25px;
     font-weight: bold;
 }
+
 .top {
     background-color: #352BA5;
     padding: 10px 10px;
     color: white;
 }
+
 .btn-learn-more {
     background-color: #F61067;
     border: none;
     color: white;
     padding: 10px 20px;
     text-transform: uppercase;
+    border-radius: 0;
 }
-.welcome-box, .vote-box {
+
+.welcome-top {
+    margin-top: 20px;
     background-color: #9090A5;
+    padding: 15px;
+    color: white;
+}
+
+.welcome-box {
+    background-color: #13124F;
     color: white;
     padding: 15px;
-    margin-top: 20px;
 }
-.vote-box .btn-cool {
-    background-color: #2AD392;
+
+.welcome-bottom {
+    background-color: #352BA5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.welcome-bottom a{
     color: white;
-    border: none;
+    font-size: 10px;
 }
+
+.vote-box {
+    padding: 15px;
+    margin-top: 20px;
+    border: solid 1px #9090A5;
+}
+
+.vote-box .d-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.vote-box .btn-cool,
 .vote-box .btn-lame {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.vote-box .btn-cool {
     background-color: #F61067;
     color: white;
     border: none;
+    border-radius: 0;
 }
+
+.vote-box .btn-lame {
+    color: #2AD392;
+    border-radius: 0;
+    border: solid 2px #2AD392;
+}
+
+.progress {
+    display: flex;
+    height: 10px;
+    overflow: hidden;
+    background-color: #e9ecef;
+    border-radius: 0;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    transition: width 0.6s ease;
+}
+
+.progress-bar-cool {
+    background-color: #F61067;
+}
+
+.progress-bar-lame {
+    background-color: #2AD392;
+}
+
 .footer {
-    background-color: #1B1B6C;
+    background-color: #13124F;
     color: white;
     padding: 20px 0;
-    text-align: center;
+    padding-left: 20px;
 }
+
 .alert {
     background-color: #9090A5;
     color: white;
+    border: none;
+    border-radius: 0;
 }
-.messages{
+
+.messages {
     background-color: #F61067;
     text-transform: uppercase;
     color: white;
     padding: 15px;
     margin-top: 20px;
+}
+
+input.form-control {
+    background-color: #1B1B6C;
+    border: none;
+    border-top: 2px solid #9090A5;
+    border-bottom: 4px solid #9090A5;
+    border-radius: 0;
+    color: #9090A5;
+}
+
+input.form-control::placeholder {
+    color: #9090A5;
 }
