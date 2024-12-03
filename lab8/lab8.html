@@ -4,16 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab-8</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <a href="../index.html">Home</a>
-    <h3>Js introduction</h3>
+    <h3>JS Introduction</h3>
     <div id="code">
-        <p>there will be code</p>
+        <p>Үр дүн энд харагдана:</p>
+        <div id="result" class="result"></div>
     </div>
-    <input type="number" name="number" id="number">
-    <input type="submit" value="submit">
+    <div class="task">
+        <h4>1. Гараас өгсөн тооны цифрүүдийн нийлбэр нь палиндром мөн эсэхийг шалга:</h4>
+        <p>Таны оруулсан тооны цифрүүдийг нэмээд нийлбэр нь палиндром мөн эсэхийг шалгана.</p>
+        <label for="number1">Тоогоо оруулна уу:</label>
+        <input type="number" id="number1" name="number1">
+        <button onclick="sumPalindrome()">Шалгах</button>
+    </div>
+    <div class="task">
+        <h4>2. Чоно 25 км/ц хурдтай, туулай 18 км/ц хурдтай.</h4>
+        <p>Гараас өгсөн зайгаар туулайг хэдэн минут, хэдэн секундын дараа чоно гүйцэхийг тооцно.</p>
+        <label for="distance">Зайгаа оруулна уу (км):</label>
+        <input type="number" id="distance" name="distance">
+        <button onclick="calculateChase()">Гүйцэх хугацааг тооцоолох</button>
+    </div>
+    <div class="task">
+        <h4>3. Байшин 9 давхар, 3 орцтой, давхартаа 4 айлтай.</h4>
+        <p>Гараас өгсөн тоот нь хэд дүгээр орцны, хэд дүгээр давхарын, хэд дэх хаалга болохыг тооцно.</p>
+        <label for="flatNumber">Тоот оруулна уу:</label>
+        <input type="number" id="flatNumber" name="flatNumber">
+        <button onclick="findFlatDetails()">Олох</button>
+    </div>
+    <div class="task">
+        <h4>4. Array-д өгөгдсөн 5 тооны хамгийн бага ерөнхий хуваагчийг ол.</h4>
+        <p>Гараас өгсөн 5 тоо (таслалаар тусгаарласан) хоорондоо хуваагдах хамгийн бага ерөнхий хуваагчийг тооцно.</p>
+        <label for="array">Тоонууд оруулна уу (Жишээ: 15,30,45,60,90):</label>
+        <input type="text" id="array" name="array" placeholder="Жишээ: 15,30,45,60,90">
+        <button onclick="findGCD()">Хамгийн бага ерөнхий хуваагчийг олох</button>
+    </div>
+    <div class="task">
+        <h4>5. Өглөө болон оройн тооцоолол:</h4>
+        <p>Өглөө тооны 2 зэрэг, орой язгуурыг олно.</p>
+        <label for="number2">Тоогоо оруулна уу:</label>
+        <input type="number" id="number2" name="number2">
+        <button onclick="morningCalculation()">Өглөө: 2 зэрэг</button>
+        <button onclick="eveningCalculation()">Орой: Язгуур</button>
+    </div>
 </body>
 </html>

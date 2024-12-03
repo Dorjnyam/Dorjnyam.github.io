@@ -3,10 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab-9</title>
+    <title>Hangman Тоглоом</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <a href="../index.html">Home</a>
-    <h3>Js Hangmman game</h3>
+    <h1>Hangman Тоглоом</h1>
+    <div id="game-container">
+        <div id="question-container">
+            <h2 id="question">Асуулт энд харагдана</h2>
+            <div id="word-container">__ __ __ __</div>
+        </div>
+        <div id="hangman-container">
+            <canvas id="hangman-canvas" width="200" height="300"></canvas>
+        </div>
+        <div id="controls">
+            <div id="alphabet-container">
+            </div>
+        </div>
+        <p id="lives">Үлдсэн амь: 5</p>
+        <p id="message"></p>
+        <button id="restart" class="hidden">Дахин тоглох</button>
+    </div>
 </body>
 </html>
