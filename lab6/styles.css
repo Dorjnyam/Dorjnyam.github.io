@@ -96,10 +96,10 @@ body {
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(2, 49%); 
-    gap: 20px; 
+    grid-template-columns: repeat(2, 50%); 
+    gap: 10px; 
     margin: 0 auto;
-    width: calc(100%-60px);
+    width: calc(100% );
 }
 
 .product-item {
@@ -110,7 +110,7 @@ body {
     position: relative;
     color: white;
     height: 400px;
-    width: calc(100%-20px);
+    width: calc(100% - 10px);
 }
 
 .product-item h3 {
