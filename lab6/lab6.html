@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +19,7 @@
         content="Explore the latest Apple products including iPhone 15 Pro, Apple Watch Ultra, and iPad Pro.">
     <meta name="twitter:image" content="https://www.apple.com/icons/apple-logo.png">
     <meta name="twitter:url" content="https://www.apple.com/">
-    <title>Apple-Inspired Home Page</title>
+    <title>Apple-Inspired Home Page - Latest Products</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="icons8-apple-24.png" type="image/png">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
@@ -71,7 +70,7 @@
         </section>
         <section class="hero">
             <div class="container">
-                <h1>Apple Watch Ultra</h1>
+                <h2>Apple Watch Ultra</h2>
                 <p>Adventure Awaits.</p>
                 <a href="#" class="cta-button">Learn more</a>
                 <a href="#" class="cta-button">Buy</a>
@@ -79,7 +78,7 @@
         </section>
         <section class="hero">
             <div class="container">
-                <h1>iPad Pro</h1>
+                <h2>iPad Pro</h2>
                 <p>Supercharged by M2.</p>
                 <a href="#" class="cta-button">Learn more</a>
                 <a href="#" class="cta-button">Buy</a>
@@ -302,6 +301,13 @@
             </section>
         </div>
     </footer>
+    <script>
+        // Redirect non-www to www if necessary
+        if (window.location.hostname !== "www.apple.com") {
+            window.location.replace("https://www.apple.com" + window.location.pathname + window.location.search);
+        }
+    </script>
+
 </body>
 
 </html>
