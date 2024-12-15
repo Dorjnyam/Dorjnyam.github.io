@@ -1,15 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab-10</title>
-    <script src="script.js" defer></script>
+    <title>Мэдээний сайт</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .news-item {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .news-item h2 {
+            font-size: 1.2em;
+            margin: 0 0 10px;
+        }
+        .news-item p {
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
-    <h1>Latest News</h1>
-    <ul id="news-list">
-        <!-- News items will be populated here -->
-    </ul>
+    <script>
+        // RSS өгөгдөл авах
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "rss.xml");
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xhr.responseText, "text/xml");
+                console.log("Successful");
+                console.log(xmlDoc);
+                const items = xmlDoc.getElementsByTagName("item");
+                const newsContainer = document.getElementById("news-container");
+                console.log(items);
+                console.log(newsContainer);
+                for (let i = 0; i < items.length; i++) {
+                    const item = items[i];
+
+                    const title = item.getElementsByTagName("title")[0].textContent;
+                    const description = item.getElementsByTagName("description")[0].textContent;
+                    const pubDate = item.getElementsByTagName("pubDate")[0].textContent;
+                console.log(title);
+                }
+                    
+            } else {
+                console.error("RSS татахад алдаа гарлаа."); 
+            }
+        };
+        xhr.onerror = function () {
+            console.error("Хүсэлт илгээхэд алдаа гарлаа."); 
+        };
+        xhr.send();
+
+    </script>
 </body>
 </html>
