@@ -1,22 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Welcome - Finance App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="container">
-        <h1>Login</h1>
-        <form id="loginForm">
-            <input type="text" id="username" placeholder="Username" required autocomplete="username" />
-            <input type="password" id="password" placeholder="Password" required autocomplete="current-password" />
-            <button type="submit">Login</button>
-          </form>
-          
-        <p>Don't have an account? <a href="register.html">Register here</a></p>
+
+<body class="bg-gray-100 font-sans text-gray-900">
+
+    <header class="bg-green-500 text-white shadow-md fixed top-0 left-0 w-full z-10">
+        <div class="container mx-auto flex justify-between items-center px-6 py-4">
+            <div class="flex items-center">
+                <img src="logo.png" alt="Logo" class="h-8 w-8 mr-3">
+                <h1 class="text-xl font-bold">Finance App</h1>
+            </div>
+            <nav class="flex space-x-6">
+                <a href="home.html" class="hover:text-gray-200">Home</a>
+                <a href="about.html" class="hover:text-gray-200">About</a>
+                <a href="contact.html" class="hover:text-gray-200">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="pt-24 flex justify-center items-center min-h-screen bg-gray-100">
+        <div class="text-center bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
+
+            <section class="intro mb-8">
+                <p class="text-xl text-gray-700 mb-4">Track your income and expenses with ease. Start managing your
+                    finances today!</p>
+                <p class="text-lg text-gray-600 mb-6">Sign up or log in to access your financial dashboard.</p>
+            </section>
+
+            <div class="space-x-4">
+                <a href="login.html"
+                    class="px-6 py-3 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500">Login</a>
+                <a href="register.html"
+                    class="px-6 py-3 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Register</a>
+            </div>
+
+        </div>
     </div>
-    <script src="scripts.js"></script>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

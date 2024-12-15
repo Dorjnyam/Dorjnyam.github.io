@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 font-sans text-gray-900">
+
+    <header class="bg-green-500 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <h1 class="text-2xl font-semibold">Finance App</h1>
+            <nav>
+                <a href="home.html" class="text-white hover:bg-green-600 px-4 py-2 rounded">Home</a>
+                <a href="cards.html" class="text-white hover:bg-green-600 px-4 py-2 rounded">Cards</a>
+                <a href="index.html" class="text-white hover:bg-green-600 px-4 py-2 rounded">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-6 mt-6">
+        <h1 class="text-3xl font-semibold mb-6">Your Cards</h1>
+
+        <form id="addCardForm" class="space-y-4">
+            <div>
+                <label for="card_number" class="block text-sm font-medium text-gray-700">Card Number:</label>
+                <input type="text" id="card_number" name="card_number" required
+                    class="w-full px-4 py-2 mt-1 border rounded-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" />
+            </div>
+
+            <div>
+                <label for="card_holder_name" class="block text-sm font-medium text-gray-700">Card Holder Name:</label>
+                <input type="text" id="card_holder_name" name="card_holder_name" required
+                    class="w-full px-4 py-2 mt-1 border rounded-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" />
+            </div>
+
+            <div>
+                <label for="expiry_date" class="block text-sm font-medium text-gray-700">Expiry Date:</label>
+                <input type="text" id="expiry_date" name="expiry_date" required
+                    class="w-full px-4 py-2 mt-1 border rounded-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" />
+            </div>
+
+            <div>
+                <label for="cvv" class="block text-sm font-medium text-gray-700">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required
+                    class="w-full px-4 py-2 mt-1 border rounded-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" />
+            </div>
+
+            <div>
+                <label for="zip" class="block text-sm font-medium text-gray-700">ZIP Code:</label>
+                <input type="text" id="zip" name="zip" required
+                    class="w-full px-4 py-2 mt-1 border rounded-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" />
+            </div>
+
+            <button type="submit"
+                class="w-full py-2 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500">
+                Add Card
+            </button>
+        </form>
+
+        <h2 class="text-2xl font-semibold mt-10">Cards</h2>
+        <div id="cardList" class="space-y-4 mt-4">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
