@@ -1,35 +1,42 @@
-function fetchNews() {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'https://ikon.mn/rss', true);
-    
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            const xml = xhr.responseText;
-            parseRSS(xml);  
+const xhr = new XMLHttpRequest();
+xhr.open("GET", "rss.xml");
+xhr.onload = function () {
+    if (xhr.status === 200) {
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(xhr.responseText, "text/xml");
+        const items = xmlDoc.getElementsByTagName("item");
+        const newsContainer = document.getElementById("news-container");
+
+        newsContainer.innerHTML = "";
+
+        for (let i = 0; i < items.length; i++) {
+            const item = items[i];
+
+            const title = item.getElementsByTagName("title")[0].textContent;
+            const description = item.getElementsByTagName("description")[0].textContent;
+            const pubDate = item.getElementsByTagName("pubDate")[0].textContent;
+            const link = item.getElementsByTagName("link")[0].textContent;
+            const imageUrl = item.getElementsByTagName("media:content")[0]?.getAttribute("url") || '';
+
+            const newsItem = document.createElement("div");
+            newsItem.className = "news-item";
+
+            newsItem.innerHTML = `
+                <h2><a href="${link}" target="_blank">${title}</a></h2>
+                <p>${description}</p>
+                ${imageUrl ? `<img src="${imageUrl}" alt="${title} зураг">` : ''}
+                <p class="pub-date">Хэвлэгдсэн огноо: ${new Date(pubDate).toLocaleDateString()}</p>
+            `;
+
+            newsContainer.appendChild(newsItem);
         }
-    };
-    xhr.send();
-}
-
-function parseRSS(xml) {
-    const parser = new DOMParser();
-    const xmlDoc = parser.parseFromString(xml, 'application/xml');
-    const items = xmlDoc.getElementsByTagName('item');
-    
-    const newsList = document.getElementById('news-list');
-    newsList.innerHTML = '';  
-
-    for (let i = 0; i < items.length; i++) {
-        const title = items[i].getElementsByTagName('title')[0].textContent;
-        const description = items[i].getElementsByTagName('description')[0].textContent;
-        const link = items[i].getElementsByTagName('link')[0].textContent;
-        const listItem = document.createElement('li');
-        
-        listItem.innerHTML = `<a href="${link}" target="_blank">${title}</a><p>${description}</p>`;
-        newsList.appendChild(listItem);  
+    } else {
+        console.error("RSS татахад алдаа гарлаа.");
+        document.getElementById("news-container").innerHTML = "Мэдээ татаж чадсангүй.";
     }
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    fetchNews();
-});
+};
+xhr.onerror = function () {
+    console.error("Хүсэлт илгээхэд алдаа гарлаа.");
+    document.getElementById("news-container").innerHTML = "Сервертэй холбогдож чадсангүй.";
+};
+xhr.send();
