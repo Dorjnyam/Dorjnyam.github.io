@@ -11,24 +11,109 @@
 <body class="bg-gray-100">
     <div id="navbar"></div>
 
-    <main class="pt-20 px-6">
-        <header class="mb-8">
-            <h1 class="text-3xl font-bold text-center">Dashboard</h1>
-            <nav class="mt-4 text-center">
-                <a href="wallet.html" class="text-green-500 hover:text-green-700">Wallet</a>
-                <a href="profile.html" class="ml-6 text-green-500 hover:text-green-700">Profile</a>
-                <a href="index.html" id="logoutButton" class="ml-6 text-red-500 hover:text-red-700">Logout</a>
-            </nav>
-        </header>
+    <main class="container mx-auto pt-10 px-6">
+        <section class="mb-8 pt-10">
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <h2 class="text-xl font-bold text-gray-700">Account Overview</h2>
+                <div class="flex items-center justify-between mt-4">
+                    <div>
+                        <h3 class="text-gray-500">Total Balance</h3>
+                        <p id="walletBalance" class="text-2xl font-bold text-green-600">Loading...</p>
+                    </div>
+                    <div class="flex space-x-4">
+                        <button id="depositButton" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">Deposit Money</button>
+                        <button id="sendButton" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Send Money</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <h2 class="text-xl font-bold text-gray-700">Recent Transactions</h2>
+                <ul id="transactionList" class="w-full mt-4 space-y-4">
+                </ul>
+            </div>
+        </section>
 
         <section>
-            <h2 class="text-xl font-semibold">Welcome, <span id="userName" class="text-green-500"></span></h2>
-            <div id="dashboardData" class="mt-6">
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <h2 class="text-xl font-bold text-gray-700">Statistics</h2>
+                <div class="grid grid-cols-2 gap-4 mt-4">
+                    <div class="p-4 bg-green-100 rounded-lg text-center">
+                        <h3 class="text-lg font-bold text-green-600">Savings</h3>
+                        <p class="text-2xl font-bold">$400.00</p>
+                    </div>
+                    <div class="p-4 bg-red-100 rounded-lg text-center">
+                        <h3 class="text-lg font-bold text-red-600">Debt</h3>
+                        <p class="text-2xl font-bold">$0.00</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
+    <div id="depositModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg w-1/3">
+            <h2 class="text-xl font-bold mb-4">Deposit Money</h2>
+            <input id="depositAmount" type="number" placeholder="Enter amount" class="w-full px-4 py-2 border rounded-lg mb-4">
+            <div class="flex justify-end space-x-4">
+                <button id="closeDepositModal" class="bg-gray-300 px-4 py-2 rounded-lg hover:bg-gray-400">Cancel</button>
+                <button id="confirmDeposit" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">Deposit</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="sendModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg w-1/3">
+            <h2 class="text-xl font-bold mb-4">Send Money</h2>
+            <input id="sendRecipient" type="text" placeholder="Enter recipient" class="w-full px-4 py-2 border rounded-lg mb-4">
+            <input id="sendAmount" type="number" placeholder="Enter amount" class="w-full px-4 py-2 border rounded-lg mb-4">
+            <div class="flex justify-end space-x-4">
+                <button id="closeSendModal" class="bg-gray-300 px-4 py-2 rounded-lg hover:bg-gray-400">Cancel</button>
+                <button id="confirmSend" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Send</button>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
+
+    <script>
+        const depositModal = document.getElementById('depositModal');
+        const sendModal = document.getElementById('sendModal');
+
+        const depositButton = document.getElementById('depositButton');
+        const sendButton = document.getElementById('sendButton');
+        const closeDepositModal = document.getElementById('closeDepositModal');
+        const closeSendModal = document.getElementById('closeSendModal');
+
+        depositButton.addEventListener('click', () => {
+            depositModal.classList.remove('hidden');
+        });
+        closeDepositModal.addEventListener('click', () => {
+            depositModal.classList.add('hidden');
+        });
+
+        sendButton.addEventListener('click', () => {
+            sendModal.classList.remove('hidden');
+        });
+        closeSendModal.addEventListener('click', () => {
+            sendModal.classList.add('hidden');
+        });
+
+        document.getElementById('confirmDeposit').addEventListener('click', () => {
+            const amount = document.getElementById('depositAmount').value;
+            alert(`Deposited: $${amount}`);
+            depositModal.classList.add('hidden');
+        });
+
+        document.getElementById('confirmSend').addEventListener('click', () => {
+            const recipient = document.getElementById('sendRecipient').value;
+            const amount = document.getElementById('sendAmount').value;
+            alert(`Sent $${amount} to ${recipient}`);
+            sendModal.classList.add('hidden');
+        });
+    </script>
 </body>
 
 </html>
